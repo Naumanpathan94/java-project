@@ -1,29 +1,15 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage('Check Git Version') {
             steps {
-                sh 'mvn clean package'
+                bat 'git --version'
             }
         }
-        stage('Test') {
+        stage('Check Maven Version') {
             steps {
-                sh 'mvn test'
+                bat 'mvn -version'
             }
-        }
-        stage('Deploy') {
-            steps {
-                // Add deployment steps here if needed
-                echo 'Deployment stage'
-            }
-        }
-    }
-    post {
-        failure {
-            mail to: 'belivenot80@gmai.com',
-                 subject: 'Pipeline failed',
-                 body: 'Check the Jenkins console output for details.'
         }
     }
 }
