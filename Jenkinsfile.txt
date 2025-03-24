@@ -8,8 +8,7 @@ pipeline {
         }
         stage('Check Maven Version') {
             steps {
-               bat '"C:\Users\nauma\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin\mvn.cmd" -version'
-            }
+               bat '"C:\\Users\\nauma\\Downloads\\apache-maven-3.9.9-bin\\apache-maven-3.9.9\\bin\\mvn.cmd" -version'        }
         }
     }
 }
